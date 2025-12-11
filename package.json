@@ -1,0 +1,35 @@
+{
+  "name": "software-meets-landing-page",
+  "version": "1.0.0",
+  "description": "Modern SaaS Software Landing Page - Hub für alle Softwareentwicklungen",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonasVisus/Software-meets-landing-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonasVisus/Software-meets-landing-page/issues"
+  },
+  "homepage": "https://github.com/JonasVisus/Software-meets-landing-page#readme",
+  "dependencies": {
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.7",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.8",
+    "next": "^14.2.33",
+    "postcss": "^8.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.9.3"
+  }
+}
