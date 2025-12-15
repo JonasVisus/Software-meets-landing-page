@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const navigation = [
   { name: 'Lösungen', href: '/#solutions' },
@@ -42,7 +43,8 @@ export default function Header() {
         </ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end gap-2">
+        <ThemeToggle />
         <Link href="/kontakt" className="btn bg-white text-primary hover:bg-gray-100 border-none hidden md:flex">
           Demo anfordern
         </Link>
