@@ -66,11 +66,11 @@ export default function CasePage({ params }: CasePageProps) {
       />
 
       {/* Company Badge */}
-      <section className="py-8 bg-white border-b border-secondary-100">
-        <div className="container-custom">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-secondary-500">
+      <section className="py-8 bg-base-100 border-b border-base-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-base-content/70">
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full" />
+              <span className="badge badge-success badge-xs" />
               Entwickelt für {caseData.company}
             </span>
             <span className="hidden sm:inline">•</span>

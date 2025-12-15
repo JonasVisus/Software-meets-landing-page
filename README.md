@@ -1,15 +1,16 @@
 # Software Landing Page
 
-Eine moderne SaaS Software Landing Page Website, entwickelt mit Next.js 14, TypeScript und Tailwind CSS.
+Eine moderne SaaS Software Landing Page Website, entwickelt mit Next.js 14, TypeScript, Tailwind CSS und DaisyUI.
 
 ## 🚀 Features
 
-- **Moderne Tech-Stack**: Next.js 14 mit App Router, TypeScript, Tailwind CSS
+- **Moderne Tech-Stack**: Next.js 14 mit App Router, TypeScript, Tailwind CSS, DaisyUI
 - **Responsives Design**: Optimiert für alle Bildschirmgrößen
 - **SEO-optimiert**: Meta-Tags, strukturierte URLs, semantisches HTML
 - **Wiederverwendbare Komponenten**: Modulare SaaS-Landing-Page-Sektionen
 - **Dynamische Routes**: Automatische Generierung von Case-Unterseiten
 - **Performance**: Statische Generierung für schnelle Ladezeiten
+- **DaisyUI Komponenten**: Optimierte UI-Komponenten mit weniger Code
 
 ## 📁 Projektstruktur
 
@@ -76,10 +77,19 @@ export const neuerCase: CaseData = {
 
 ## 🎨 Anpassung
 
-### Farben
-Farben können in `tailwind.config.js` angepasst werden:
-- `primary`: Hauptfarbe (Standard: Blau)
-- `secondary`: Sekundärfarbe (Standard: Grau)
+### Farben & DaisyUI Theme
+Das Custom Theme "softwaresolutions" ist in `tailwind.config.js` definiert:
+- `primary`: #0284c7 (Blau)
+- `secondary`: #64748b (Grau)
+- `accent`: #38bdf8 (Hellblau)
+- `neutral`: #0f172a (Dunkel)
+
+DaisyUI Komponenten die verwendet werden:
+- `btn`, `btn-primary`, `btn-secondary`, `btn-outline`
+- `card`, `card-body`, `card-title`
+- `input`, `select`, `textarea`, `form-control`
+- `collapse`, `join` (für FAQ-Akkordeons)
+- `navbar`, `menu`, `dropdown`
 
 ### Komponenten
 Alle Sektionen sind modular aufgebaut und können einfach angepasst werden.

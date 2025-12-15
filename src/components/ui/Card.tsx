@@ -10,14 +10,12 @@ interface CardProps {
 export default function Card({ children, className = '', hover = false, style }: CardProps) {
   return (
     <div 
-      className={`
-        bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-secondary-100
-        ${hover ? 'hover:shadow-xl hover:transform hover:-translate-y-1 transition-all duration-300' : ''}
-        ${className}
-      `}
+      className={`card bg-base-100 shadow-lg border border-base-300 ${hover ? 'hover:shadow-xl hover:-translate-y-1 transition-all duration-300' : ''} ${className}`}
       style={style}
     >
-      {children}
+      <div className="card-body">
+        {children}
+      </div>
     </div>
   );
 }
@@ -42,7 +40,7 @@ interface CardTitleProps {
 
 export function CardTitle({ children, className = '' }: CardTitleProps) {
   return (
-    <h3 className={`text-xl font-bold text-secondary-900 ${className}`}>
+    <h3 className={`card-title text-xl font-bold ${className}`}>
       {children}
     </h3>
   );
@@ -55,7 +53,7 @@ interface CardDescriptionProps {
 
 export function CardDescription({ children, className = '' }: CardDescriptionProps) {
   return (
-    <p className={`text-secondary-600 ${className}`}>
+    <p className={`text-base-content/70 ${className}`}>
       {children}
     </p>
   );

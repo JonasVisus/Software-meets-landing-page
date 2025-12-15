@@ -9,16 +9,16 @@ interface CTASectionProps {
 
 export default function CTASection({ title, subtitle, buttonText, buttonLink }: CTASectionProps) {
   return (
-    <section className="section-padding bg-gradient-to-r from-secondary-900 to-secondary-800">
-      <div className="container-custom">
+    <section className="py-16 md:py-24 lg:py-32 bg-neutral">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-content mb-6">
             {title}
           </h2>
-          <p className="text-lg md:text-xl text-secondary-300 mb-8">
+          <p className="text-lg md:text-xl text-neutral-content/70 mb-8">
             {subtitle}
           </p>
-          <Button href={buttonLink} size="lg" className="bg-white text-secondary-900 hover:bg-secondary-100">
+          <Button href={buttonLink} size="lg" className="btn-accent">
             {buttonText}
           </Button>
         </div>

@@ -9,31 +9,28 @@ interface BenefitsSectionProps {
 
 export default function BenefitsSection({ title, subtitle, benefits }: BenefitsSectionProps) {
   return (
-    <section id="benefits" className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-      <div className="container-custom">
+    <section id="benefits" className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-content">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader 
           title={title} 
           subtitle={subtitle}
-          className="text-white [&_h2]:text-white [&_p]:text-primary-100"
+          className="[&_h2]:text-primary-content [&_p]:text-primary-content/80"
         />
         
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="stats stats-vertical lg:stats-horizontal shadow w-full bg-primary-content/10 backdrop-blur-sm">
           {benefits.map((benefit, index) => (
-            <div 
-              key={index} 
-              className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-colors"
-            >
+            <div key={index} className="stat place-items-center">
               {benefit.metric && (
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
+                <div className="stat-value text-primary-content">
                   {benefit.metric}
                 </div>
               )}
-              <h3 className="text-lg md:text-xl font-semibold mb-2">
+              <div className="stat-title text-primary-content/90 font-semibold">
                 {benefit.title}
-              </h3>
-              <p className="text-primary-100 text-sm md:text-base">
+              </div>
+              <div className="stat-desc text-primary-content/70">
                 {benefit.description}
-              </p>
+              </div>
             </div>
           ))}
         </div>

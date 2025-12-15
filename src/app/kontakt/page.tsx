@@ -22,172 +22,174 @@ export default function KontaktPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-secondary-700 mb-2">
-                      Vorname *
+            <div className="card bg-base-100 shadow-lg">
+              <div className="card-body">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="form-control w-full">
+                      <label className="label" htmlFor="firstName">
+                        <span className="label-text font-medium">Vorname *</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        required
+                        className="input input-bordered w-full"
+                        placeholder="Max"
+                      />
+                    </div>
+                    <div className="form-control w-full">
+                      <label className="label" htmlFor="lastName">
+                        <span className="label-text font-medium">Nachname *</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        required
+                        className="input input-bordered w-full"
+                        placeholder="Mustermann"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-control w-full">
+                    <label className="label" htmlFor="email">
+                      <span className="label-text font-medium">E-Mail *</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="input input-bordered w-full"
+                      placeholder="max@unternehmen.de"
+                    />
+                  </div>
+
+                  <div className="form-control w-full">
+                    <label className="label" htmlFor="company">
+                      <span className="label-text font-medium">Unternehmen</span>
                     </label>
                     <input
                       type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                      placeholder="Max"
+                      id="company"
+                      name="company"
+                      className="input input-bordered w-full"
+                      placeholder="Musterfirma GmbH"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-secondary-700 mb-2">
-                      Nachname *
+
+                  <div className="form-control w-full">
+                    <label className="label" htmlFor="interest">
+                      <span className="label-text font-medium">Interesse</span>
                     </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
+                    <select id="interest" name="interest" className="select select-bordered w-full">
+                      <option value="">Bitte wählen</option>
+                      <option value="prozessoptimierung">Prozessoptimierung</option>
+                      <option value="ecommerce">E-Commerce</option>
+                      <option value="analytics">Data & Analytics</option>
+                      <option value="sonstiges">Sonstiges</option>
+                    </select>
+                  </div>
+
+                  <div className="form-control w-full">
+                    <label className="label" htmlFor="message">
+                      <span className="label-text font-medium">Nachricht *</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
                       required
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                      placeholder="Mustermann"
+                      rows={5}
+                      className="textarea textarea-bordered w-full resize-none"
+                      placeholder="Erzählen Sie uns von Ihrem Projekt..."
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
-                    E-Mail *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                    placeholder="max@unternehmen.de"
-                  />
-                </div>
+                  <Button type="submit" className="w-full">
+                    Nachricht senden
+                  </Button>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-secondary-700 mb-2">
-                    Unternehmen
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                    placeholder="Musterfirma GmbH"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="interest" className="block text-sm font-medium text-secondary-700 mb-2">
-                    Interesse
-                  </label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                  >
-                    <option value="">Bitte wählen</option>
-                    <option value="prozessoptimierung">Prozessoptimierung</option>
-                    <option value="ecommerce">E-Commerce</option>
-                    <option value="analytics">Data & Analytics</option>
-                    <option value="sonstiges">Sonstiges</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-2">
-                    Nachricht *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
-                    placeholder="Erzählen Sie uns von Ihrem Projekt..."
-                  />
-                </div>
-
-                <Button type="submit" className="w-full">
-                  Nachricht senden
-                </Button>
-
-                <p className="text-sm text-secondary-500 text-center">
-                  Mit dem Absenden stimmen Sie unserer{' '}
-                  <a href="/datenschutz" className="text-primary-600 hover:underline">
-                    Datenschutzerklärung
-                  </a>{' '}
-                  zu.
-                </p>
-              </form>
+                  <p className="text-sm text-base-content/60 text-center">
+                    Mit dem Absenden stimmen Sie unserer{' '}
+                    <a href="/datenschutz" className="link link-primary">
+                      Datenschutzerklärung
+                    </a>{' '}
+                    zu.
+                  </p>
+                </form>
+              </div>
             </div>
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h3 className="text-xl font-bold text-secondary-900 mb-6">
-                  Kontaktinformationen
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary-600">📧</span>
+              <div className="card bg-base-100 shadow-lg">
+                <div className="card-body">
+                  <h3 className="card-title text-xl">
+                    Kontaktinformationen
+                  </h3>
+                  <div className="space-y-4 mt-2">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary">📧</span>
+                      </div>
+                      <div>
+                        <div className="font-medium">E-Mail</div>
+                        <a href="mailto:info@software-solutions.de" className="text-base-content/70 hover:text-primary">
+                          info@software-solutions.de
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-medium text-secondary-900">E-Mail</div>
-                      <a href="mailto:info@software-solutions.de" className="text-secondary-600 hover:text-primary-600">
-                        info@software-solutions.de
-                      </a>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary">📞</span>
+                      </div>
+                      <div>
+                        <div className="font-medium">Telefon</div>
+                        <a href="tel:+4912345678900" className="text-base-content/70 hover:text-primary">
+                          +49 123 456 789 00
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary-600">📞</span>
-                    </div>
-                    <div>
-                      <div className="font-medium text-secondary-900">Telefon</div>
-                      <a href="tel:+4912345678900" className="text-secondary-600 hover:text-primary-600">
-                        +49 123 456 789 00
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary-600">📍</span>
-                    </div>
-                    <div>
-                      <div className="font-medium text-secondary-900">Adresse</div>
-                      <div className="text-secondary-600">
-                        Musterstraße 123<br />
-                        12345 Musterstadt<br />
-                        Deutschland
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary">📍</span>
+                      </div>
+                      <div>
+                        <div className="font-medium">Adresse</div>
+                        <div className="text-base-content/70">
+                          Musterstraße 123<br />
+                          12345 Musterstadt<br />
+                          Deutschland
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">
-                  Kostenlose Erstberatung
-                </h3>
-                <p className="text-primary-100 mb-6">
-                  Vereinbaren Sie ein unverbindliches Gespräch, um Ihre Anforderungen zu besprechen.
-                </p>
-                <ul className="space-y-2 text-primary-100">
-                  <li className="flex items-center gap-2">
-                    <span>✓</span> 30 Minuten kostenlos
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>✓</span> Unverbindlich
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>✓</span> Experten-Feedback
-                  </li>
-                </ul>
+              <div className="card bg-gradient-to-br from-primary to-primary/90 text-primary-content">
+                <div className="card-body">
+                  <h3 className="card-title text-xl">
+                    Kostenlose Erstberatung
+                  </h3>
+                  <p className="opacity-90 mb-4">
+                    Vereinbaren Sie ein unverbindliches Gespräch, um Ihre Anforderungen zu besprechen.
+                  </p>
+                  <ul className="space-y-2 opacity-90">
+                    <li className="flex items-center gap-2">
+                      <span>✓</span> 30 Minuten kostenlos
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span>✓</span> Unverbindlich
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span>✓</span> Experten-Feedback
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

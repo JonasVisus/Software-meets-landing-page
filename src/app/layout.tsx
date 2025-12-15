@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
+    <html lang="de" data-theme="softwaresolutions">
       <body className={inter.className}>
         <Header />
         <main className="min-h-screen">

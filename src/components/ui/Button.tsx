@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   onClick?: () => void;
@@ -13,15 +13,16 @@ interface ButtonProps {
 }
 
 const variantClasses = {
-  primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-lg hover:shadow-xl',
-  secondary: 'bg-primary-100 text-primary-700 hover:bg-primary-200 focus:ring-primary-500',
-  outline: 'bg-transparent border-2 border-secondary-300 text-secondary-700 hover:border-primary-600 hover:text-primary-600 focus:ring-primary-500',
+  primary: 'bg-primary text-white hover:bg-primary-400 border-none shadow-lg hover:shadow-xl',
+  secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',
+  outline: 'btn-outline border-primary text-primary hover:bg-primary hover:text-white hover:border-primary',
+  ghost: 'btn-ghost text-primary hover:bg-primary/10',
 };
 
 const sizeClasses = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg',
+  sm: 'btn-sm',
+  md: 'btn-md',
+  lg: 'btn-lg',
 };
 
 export default function Button({
@@ -34,9 +35,7 @@ export default function Button({
   type = 'button',
   disabled = false,
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
-  
-  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const classes = `btn ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
   if (href) {
     return (

@@ -8,26 +8,23 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 lg:pb-32 overflow-hidden">
+      <section className="hero min-h-[80vh] relative pt-16 overflow-hidden">
         {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10" />
         
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
-        <div className="absolute top-40 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+        <div className="absolute top-40 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
         
-        <div className="relative container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
-              🚀 Innovative Software-Lösungen
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-900 mb-6 animate-fade-in">
+        <div className="hero-content text-center relative z-10">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-base-content mb-6 animate-fade-in">
               Software, die Ihr{' '}
-              <span className="gradient-text">Business transformiert</span>
+              <span className="text-primary">Business transformiert</span>
             </h1>
-            <p className="text-lg md:text-xl text-secondary-600 mb-8 max-w-2xl mx-auto animate-fade-in">
-              Entdecken Sie unsere maßgeschneiderten Software-Lösungen für Industrie, E-Commerce und mehr. 
+            <p className="text-lg md:text-xl text-base-content/70 mb-8 max-w-2xl mx-auto animate-fade-in">
+              Lösungen Quantifizierbar machen - Entdecken Sie unsere maßgeschneiderten Software-Lösungen für Industrie, E-Commerce und mehr. 
               Von der Prozessoptimierung bis zur digitalen Transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
@@ -38,32 +35,28 @@ export default function HomePage() {
                 Kontakt aufnehmen
               </Button>
             </div>
-          </div>
 
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {[
-              { value: '10+', label: 'Jahre Erfahrung' },
-              { value: '50+', label: 'Projekte' },
-              { value: '98%', label: 'Kundenzufriedenheit' },
-              { value: '24/7', label: 'Support' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-1">
-                  {stat.value}
+            {/* Stats */}
+            <div className="stats stats-vertical sm:stats-horizontal shadow mt-16 bg-base-100">
+              {[
+                { value: '7+', label: 'Jahre Erfahrung' },
+                { value: '30+', label: 'Projekte' },
+                { value: '98%', label: 'Kundenzufriedenheit' },
+                { value: '24/7', label: 'Support' },
+              ].map((stat, index) => (
+                <div key={index} className="stat place-items-center">
+                  <div className="stat-value text-primary">{stat.value}</div>
+                  <div className="stat-desc">{stat.label}</div>
                 </div>
-                <div className="text-secondary-500 text-sm md:text-base">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Solutions Overview */}
-      <section id="solutions" className="section-padding bg-white">
-        <div className="container-custom">
+      <section id="solutions" className="py-16 md:py-24 lg:py-32 bg-base-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader 
             title="Unsere Kernkompetenzen" 
             subtitle="Wir entwickeln Software-Lösungen, die echte Probleme lösen"
@@ -89,7 +82,7 @@ export default function HomePage() {
             ].map((item, index) => (
               <Card key={index} hover>
                 <CardHeader>
-                  <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-3xl mb-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-3xl mb-4">
                     {item.icon}
                   </div>
                   <CardTitle>{item.title}</CardTitle>
@@ -104,8 +97,8 @@ export default function HomePage() {
       </section>
 
       {/* Cases / Products */}
-      <section id="cases" className="section-padding bg-secondary-50">
-        <div className="container-custom">
+      <section id="cases" className="py-16 md:py-24 lg:py-32 bg-base-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader 
             title="Unsere Software-Lösungen" 
             subtitle="Entdecken Sie unsere erfolgreichen Entwicklungen für führende Unternehmen"
@@ -118,39 +111,41 @@ export default function HomePage() {
                 href={`/cases/${product.slug}`}
                 className="group"
               >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
                   {/* Image Placeholder */}
-                  <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                  <figure className="h-48 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
                     <span className="text-6xl">{product.icon}</span>
-                  </div>
+                  </figure>
                   
-                  <div className="p-6 md:p-8">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded-full">
+                  <div className="card-body">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="badge badge-primary badge-sm">
                         {product.category}
                       </span>
-                      <span className="px-3 py-1 bg-secondary-100 text-secondary-700 text-xs font-medium rounded-full">
+                      <span className="badge badge-ghost badge-sm">
                         {product.industry}
                       </span>
                     </div>
                     
-                    <h3 className="text-xl md:text-2xl font-bold text-secondary-900 mb-2 group-hover:text-primary-600 transition-colors">
+                    <h3 className="card-title group-hover:text-primary transition-colors">
                       {product.name}
                     </h3>
                     
-                    <p className="text-secondary-500 text-sm mb-3">
+                    <p className="text-base-content/60 text-sm">
                       für {product.company}
                     </p>
                     
-                    <p className="text-secondary-600 mb-4">
+                    <p className="text-base-content/70">
                       {product.description}
                     </p>
                     
-                    <div className="flex items-center text-primary-600 font-medium">
-                      <span>Mehr erfahren</span>
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <div className="card-actions justify-end mt-4">
+                      <span className="text-primary font-medium flex items-center gap-2">
+                        Mehr erfahren
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -161,8 +156,8 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="py-16 md:py-24 lg:py-32 bg-base-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader 
             title="Vertraut von führenden Unternehmen" 
             subtitle="Wir arbeiten mit innovativen Unternehmen zusammen"
@@ -172,7 +167,7 @@ export default function HomePage() {
             {['Linde', 'Walbusch', 'Partner 3', 'Partner 4'].map((partner, index) => (
               <div 
                 key={index}
-                className="h-20 bg-secondary-100 rounded-xl flex items-center justify-center text-secondary-400 font-semibold text-lg"
+                className="h-20 bg-base-200 rounded-xl flex items-center justify-center text-base-content/50 font-semibold text-lg"
               >
                 {partner}
               </div>
@@ -182,20 +177,20 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-secondary-900 to-secondary-800">
-        <div className="container-custom">
+      <section className="py-16 md:py-24 lg:py-32 bg-neutral">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-content mb-6">
               Bereit für Ihre digitale Transformation?
             </h2>
-            <p className="text-lg md:text-xl text-secondary-300 mb-8">
+            <p className="text-lg md:text-xl text-neutral-content/70 mb-8">
               Lassen Sie uns gemeinsam besprechen, wie wir Ihr Unternehmen mit maßgeschneiderter Software voranbringen können.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/kontakt" size="lg" className="bg-white text-secondary-900 hover:bg-secondary-100">
+              <Button href="/kontakt" size="lg" className="btn-accent">
                 Kostenlose Beratung
               </Button>
-              <Button href="#cases" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              <Button href="#cases" variant="ghost" size="lg" className="text-neutral-content hover:bg-neutral-content/10">
                 Referenzen ansehen
               </Button>
             </div>
