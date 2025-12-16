@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description: 'Entdecken Sie unsere innovativen Software-Lösungen für Industrie, E-Commerce und mehr. Maßgeschneiderte Entwicklung mit modernsten Technologien.',
   keywords: ['Software Entwicklung', 'Custom Software', 'SaaS', 'Enterprise Software', 'Digitale Transformation'],
   authors: [{ name: 'Software Solutions Team' }],
+  icons: {
+    icon: '/images/logo_cut_white.ico',
+    apple: '/images/logo_cut_white.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
