@@ -1,8 +1,17 @@
+'use client';
+
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { hubProducts } from '@/data/cases';
 import Button from '@/components/ui/Button';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Card, { CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card';
+
+// Dynamic import für 3D-Komponente (verhindert SSR-Probleme mit Three.js)
+const Interactive3DLogo = dynamic(() => import('@/components/ui/Interactive3DLogo'), {
+  ssr: false,
+  loading: () => <div className="w-[180px] h-[180px] rounded-full bg-primary/20 animate-pulse" />
+});
 
 export default function HomePage() {
   return (
@@ -19,6 +28,11 @@ export default function HomePage() {
         
         <div className="hero-content text-center relative z-10">
           <div className="max-w-4xl">
+            {/* Interactive 3D Logo */}
+            <div className="flex justify-center mb-8">
+              <Interactive3DLogo size={180} />
+            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-base-content mb-6 animate-fade-in">
               Software, die Ihr{' '}
               <span className="text-primary">Business transformiert</span>
